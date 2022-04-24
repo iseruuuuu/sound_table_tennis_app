@@ -57,6 +57,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.0"
+  flip_card:
+    dependency: "direct main"
+    description:
+      name: flip_card
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.6.0"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -86,6 +93,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  four_swipe_direction:
+    dependency: "direct main"
+    description:
+      name: four_swipe_direction
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.4"
   get:
     dependency: "direct main"
     description:

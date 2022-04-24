@@ -21,6 +21,7 @@ class HomeScreenController extends GetxController {
   }
 
   Future<void> addScore(bool isScore) async {
+    //true -> 右　　　　false -> 左
     if (isScore) {
       if (rightScore.value >= 11) {
         addPoint(true);
@@ -34,6 +35,22 @@ class HomeScreenController extends GetxController {
         leftScore.value = 0;
       } else {
         leftScore.value++;
+      }
+    }
+    speak();
+  }
+
+  Future<void> reduceScore(bool isScore) async {
+    //true -> 右　　　　false -> 左
+    if (isScore) {
+      if (rightScore.value <= 0) {
+      } else {
+        rightScore.value--;
+      }
+    } else {
+      if (leftScore.value <= 0) {
+      } else {
+        leftScore.value--;
       }
     }
     speak();
