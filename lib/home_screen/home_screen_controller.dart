@@ -65,4 +65,12 @@ class HomeScreenController extends GetxController {
       leftPoint.value++;
     }
   }
+
+  void reset() {
+    rightScore.value = 0;
+    leftScore.value = 0;
+    rightPoint.value = 0;
+    leftPoint.value = 0;
+    tts.stop();
+  }
 }

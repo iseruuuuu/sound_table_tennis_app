@@ -111,12 +111,18 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
       floatingActionButton: FloatingActionButtonItem(
-        onPressed: () => openDialog(context: context),
+        onPressed: () => openDialog(
+          context: context,
+          controller: controller,
+        ),
       ),
     );
   }
 
-  void openDialog({required BuildContext context}) {
+  void openDialog({
+    required BuildContext context,
+    required HomeScreenController controller,
+  }) {
     showCupertinoDialog(
       context: context,
       builder: (context) {
@@ -128,10 +134,9 @@ class HomeScreen extends StatelessWidget {
               fontSize: 25,
             ),
           ),
-          content: Text(
+          content: const Text(
             '\n'
-            '今までの記録が消えてしまいます\n'
-            '大切な記録が消えてしまいます\n'
+            '得点のリセットを行います\n'
             '本当によろしいでしょうか？'
             '\n',
             style: TextStyle(
@@ -143,6 +148,7 @@ class HomeScreen extends StatelessWidget {
               child: const Text("OK"),
               onPressed: () {
                 //TODO 得点をリセットする。
+                controller.reset();
                 Navigator.of(context).pop();
               },
             ),
