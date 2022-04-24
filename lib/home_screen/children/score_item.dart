@@ -17,7 +17,7 @@ class ScoreItem extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Container(
         width: mediaHeight / 2,
-        height: mediaWidth / 3,
+        height: mediaWidth / 2,
         color: color,
         child: Center(
           child: Text(

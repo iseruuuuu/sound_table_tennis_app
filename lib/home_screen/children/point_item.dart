@@ -17,7 +17,7 @@ class PointItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Container(
-        width: mediaWidth / 8,
+        width: mediaWidth / 9,
         height: mediaHeight / 3,
         color: color,
         child: Center(

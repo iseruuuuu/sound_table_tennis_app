@@ -18,99 +18,97 @@ class HomeScreen extends StatelessWidget {
     final leftKey = GlobalKey<FlipCardState>();
     return Scaffold(
       backgroundColor: CupertinoColors.black,
-      body: Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            FlipCard(
-              key: rightKey,
-              flipOnTouch: false,
-              direction: FlipDirection.VERTICAL,
-              front: Obx(
-                () => FourSwipeDirection(
-                  swipeUp: () {
-                    controller.addScore(true);
-                    rightKey.currentState?.toggleCard();
-                  },
-                  swipeDown: () {
-                    controller.reduceScore(true);
-                    rightKey.currentState?.toggleCard();
-                  },
-                  child: ScoreItem(
-                    score: '${controller.rightScore}',
-                    color: Colors.lightBlueAccent,
-                  ),
-                ),
-              ),
-              back: Obx(
-                () => FourSwipeDirection(
-                  swipeUp: () {
-                    controller.addScore(true);
-                    rightKey.currentState?.toggleCard();
-                  },
-                  swipeDown: () {
-                    controller.reduceScore(true);
-                    rightKey.currentState?.toggleCard();
-                  },
-                  child: ScoreItem(
-                    score: '${controller.rightScore}',
-                    color: Colors.lightBlueAccent,
-                  ),
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          FlipCard(
+            key: rightKey,
+            flipOnTouch: false,
+            direction: FlipDirection.VERTICAL,
+            front: Obx(
+              () => FourSwipeDirection(
+                swipeUp: () {
+                  controller.addScore(true);
+                  rightKey.currentState?.toggleCard();
+                },
+                swipeDown: () {
+                  controller.reduceScore(true);
+                  rightKey.currentState?.toggleCard();
+                },
+                child: ScoreItem(
+                  score: '${controller.rightScore}',
+                  color: Colors.lightBlueAccent,
                 ),
               ),
             ),
-            Obx(
-              () => PointItem(
-                point: '${controller.leftPoint}',
-                color: Colors.lightBlueAccent,
-              ),
-            ),
-            Obx(
-              () => PointItem(
-                point: '${controller.rightPoint}',
-                color: Colors.redAccent,
-              ),
-            ),
-            FlipCard(
-              key: leftKey,
-              flipOnTouch: false,
-              direction: FlipDirection.VERTICAL,
-              front: Obx(
-                () => FourSwipeDirection(
-                  swipeUp: () {
-                    controller.addScore(false);
-                    leftKey.currentState?.toggleCard();
-                  },
-                  swipeDown: () {
-                    controller.reduceScore(false);
-                    leftKey.currentState?.toggleCard();
-                  },
-                  child: ScoreItem(
-                    score: "${controller.leftScore}",
-                    color: Colors.redAccent,
-                  ),
-                ),
-              ),
-              back: Obx(
-                () => FourSwipeDirection(
-                  swipeUp: () {
-                    controller.addScore(false);
-                    leftKey.currentState?.toggleCard();
-                  },
-                  swipeDown: () {
-                    controller.reduceScore(false);
-                    leftKey.currentState?.toggleCard();
-                  },
-                  child: ScoreItem(
-                    score: "${controller.leftScore}",
-                    color: Colors.redAccent,
-                  ),
+            back: Obx(
+              () => FourSwipeDirection(
+                swipeUp: () {
+                  controller.addScore(true);
+                  rightKey.currentState?.toggleCard();
+                },
+                swipeDown: () {
+                  controller.reduceScore(true);
+                  rightKey.currentState?.toggleCard();
+                },
+                child: ScoreItem(
+                  score: '${controller.rightScore}',
+                  color: Colors.lightBlueAccent,
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+          Obx(
+            () => PointItem(
+              point: '${controller.leftPoint}',
+              color: Colors.lightBlueAccent,
+            ),
+          ),
+          Obx(
+            () => PointItem(
+              point: '${controller.rightPoint}',
+              color: Colors.redAccent,
+            ),
+          ),
+          FlipCard(
+            key: leftKey,
+            flipOnTouch: false,
+            direction: FlipDirection.VERTICAL,
+            front: Obx(
+              () => FourSwipeDirection(
+                swipeUp: () {
+                  controller.addScore(false);
+                  leftKey.currentState?.toggleCard();
+                },
+                swipeDown: () {
+                  controller.reduceScore(false);
+                  leftKey.currentState?.toggleCard();
+                },
+                child: ScoreItem(
+                  score: "${controller.leftScore}",
+                  color: Colors.redAccent,
+                ),
+              ),
+            ),
+            back: Obx(
+              () => FourSwipeDirection(
+                swipeUp: () {
+                  controller.addScore(false);
+                  leftKey.currentState?.toggleCard();
+                },
+                swipeDown: () {
+                  controller.reduceScore(false);
+                  leftKey.currentState?.toggleCard();
+                },
+                child: ScoreItem(
+                  score: "${controller.leftScore}",
+                  color: Colors.redAccent,
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButtonItem(
         onPressed: () => openDialog(context: context),
