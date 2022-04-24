@@ -23,14 +23,14 @@ class HomeScreenController extends GetxController {
   Future<void> addScore(bool isScore) async {
     //true -> 右　　　　false -> 左
     if (isScore) {
-      if (rightScore.value >= 11) {
+      if (rightScore.value >= 10) {
         addPoint(true);
         rightScore.value = 0;
       } else {
         rightScore.value++;
       }
     } else {
-      if (leftScore.value >= 11) {
+      if (leftScore.value >= 10) {
         addPoint(false);
         leftScore.value = 0;
       } else {
@@ -57,18 +57,12 @@ class HomeScreenController extends GetxController {
   }
 
   void addPoint(bool isScore) {
+    //TODO セット数の表示がうまくいっていない
+    //TODO 1 - 1  ->  1 - 2 （わかりずらいけど笑）
     if (isScore) {
-      if (rightPoint.value >= 3) {
-        print('右の勝ちだよ〜〜〜');
-      } else {
-        rightPoint.value++;
-      }
+      rightPoint.value++;
     } else {
-      if (leftPoint.value >= 3) {
-        print('左の勝ちだよ〜〜');
-      } else {
-        leftPoint.value++;
-      }
+      leftPoint.value++;
     }
   }
 }
