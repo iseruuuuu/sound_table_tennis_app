@@ -2,9 +2,9 @@ import 'package:flutter_tts/flutter_tts.dart';
 import 'package:get/get.dart';
 
 class HomeScreenController extends GetxController {
-  HomeScreen() {
+  HomeScreenController() {
     tts.setLanguage('en-US');
-    tts.setSpeechRate(1.0);
+    tts.setSpeechRate(0.5);
   }
 
   //TODO 点数
