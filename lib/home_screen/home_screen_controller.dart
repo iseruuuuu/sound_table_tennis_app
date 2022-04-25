@@ -57,13 +57,19 @@ class HomeScreenController extends GetxController {
   }
 
   void addPoint(bool isScore) {
-    //TODO セット数の表示がうまくいっていない
-    //TODO 1 - 1  ->  1 - 2 （わかりずらいけど笑）
     if (isScore) {
-      rightPoint.value++;
-    } else {
       leftPoint.value++;
+    } else {
+      rightPoint.value++;
     }
+  }
+
+  void courtChange() {
+    var beforeLeftPoint = leftPoint.value;
+    var beforeRightPoint = rightPoint.value;
+    rightPoint.value = beforeLeftPoint;
+    leftPoint.value = beforeRightPoint;
+    tts.speak('court change');
   }
 
   void reset() {

@@ -59,17 +59,46 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
-          Obx(
-            () => PointItem(
-              point: '${controller.leftPoint}',
-              color: Colors.lightBlueAccent,
-            ),
-          ),
-          Obx(
-            () => PointItem(
-              point: '${controller.rightPoint}',
-              color: Colors.redAccent,
-            ),
+          Column(
+            children: [
+              Row(
+                children: [
+                  Obx(
+                    () => PointItem(
+                      point: '${controller.leftPoint}',
+                      color: Colors.lightBlueAccent,
+                    ),
+                  ),
+                  Obx(
+                    () => PointItem(
+                      point: '${controller.rightPoint}',
+                      color: Colors.redAccent,
+                    ),
+                  ),
+                ],
+              ),
+              const Spacer(),
+              SizedBox(
+                width: 200,
+                height: 50,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.white,
+                    onPrimary: Colors.grey,
+                  ),
+                  onPressed: controller.courtChange,
+                  child: const Text(
+                    'コートチェンジ',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
+              ),
+              const Spacer(),
+            ],
           ),
           FlipCard(
             key: leftKey,
